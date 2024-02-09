@@ -14,7 +14,7 @@ import java.util.Map;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class GetPeopleResponse {
+public class GetFilmResponse {
     @JsonProperty("count")
     private int count;
 
@@ -25,7 +25,7 @@ public class GetPeopleResponse {
     private String previous;
 
     @JsonProperty("results")
-    private PeopleBean[] results;
+    private FilmBean[] results;
 
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<>();

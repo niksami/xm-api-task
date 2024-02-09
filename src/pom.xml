@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -8,123 +8,129 @@
     <artifactId>src</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-        <dependencies>
-            <!--  JUnit  -->
-            <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter</artifactId>
-                <version>${junit-jupiter}</version>
-                <scope>test</scope>
-            </dependency>
-            <!-- Lombok -->
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok}</version>
-                <scope>provided</scope>
-            </dependency>
-            <!-- contain handy methods and constants used in tests -->
-            <dependency>
-                <groupId>org.hamcrest</groupId>
-                <artifactId>hamcrest</artifactId>
-                <version>${hamcrest}</version>
-            </dependency>
-            <!--  Selenium  -->
-            <dependency>
-                <groupId>org.seleniumhq.selenium</groupId>
-                <artifactId>selenium-java</artifactId>
-                <version>${selenium-java}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.github.bonigarcia</groupId>
-                <artifactId>webdrivermanager</artifactId>
-                <version>${webdrivermanager}</version>
-            </dependency>
-            <!--  Appium used for widgets  -->
-            <dependency>
-                <groupId>io.appium</groupId>
-                <artifactId>java-client</artifactId>
-                <version>${java-client}</version>
-            </dependency>
+    <dependencies>
+        <!--  JUnit  -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit-jupiter}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok}</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- contain handy methods and constants used in tests -->
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest</artifactId>
+            <version>${hamcrest}</version>
+        </dependency>
+        <!--  Selenium  -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium-java}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${webdrivermanager}</version>
+        </dependency>
+        <!--  Appium used for widgets  -->
+        <dependency>
+            <groupId>io.appium</groupId>
+            <artifactId>java-client</artifactId>
+            <version>${java-client}</version>
+        </dependency>
 
-            <!--  Send Keys  -->
-            <dependency>
-                <groupId>org.seleniumhq.selenium</groupId>
-                <artifactId>selenium-api</artifactId>
-                <version>${selenium-api}</version>
-            </dependency>
+        <!--  Send Keys  -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-api</artifactId>
+            <version>${selenium-api}</version>
+        </dependency>
 
-            <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>${junit}</version>
-                <scope>test</scope>
-            </dependency>
-            <!--  https://mvnrepository.com/artifact/com.squareup.retrofit2/retrofit  -->
-            <dependency>
-                <groupId>com.squareup.retrofit2</groupId>
-                <artifactId>retrofit</artifactId>
-                <version>${retrofit}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.squareup.retrofit2</groupId>
-                <artifactId>converter-jackson</artifactId>
-                <version>${converter-jackson}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.httpcomponents</groupId>
-                <artifactId>httpcore</artifactId>
-                <version>${httpcore}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.squareup.okhttp3</groupId>
-                <artifactId>logging-interceptor</artifactId>
-                <version>${logging-interceptor}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.squareup.okhttp3</groupId>
-                <artifactId>okhttp</artifactId>
-                <version>${okhttp}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.squareup.okhttp3</groupId>
-                <artifactId>okhttp-urlconnection</artifactId>
-                <version>${okhttp-urlconnection}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.squareup.okio</groupId>
-                <artifactId>okio</artifactId>
-                <version>${okio}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter-api</artifactId>
-                <version>${junit-jupiter-api}</version>
-                <scope>compile</scope>
-            </dependency>
-        </dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit}</version>
+            <scope>test</scope>
+        </dependency>
+        <!--  https://mvnrepository.com/artifact/com.squareup.retrofit2/retrofit  -->
+        <dependency>
+            <groupId>com.squareup.retrofit2</groupId>
+            <artifactId>retrofit</artifactId>
+            <version>${retrofit}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.retrofit2</groupId>
+            <artifactId>converter-jackson</artifactId>
+            <version>${converter-jackson}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
+            <version>${httpcore}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>logging-interceptor</artifactId>
+            <version>${logging-interceptor}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>${okhttp}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp-urlconnection</artifactId>
+            <version>${okhttp-urlconnection}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.okio</groupId>
+            <artifactId>okio</artifactId>
+            <version>${okio}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit-jupiter-api}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.networknt</groupId>
+            <artifactId>json-schema-validator</artifactId>
+            <version>${validator}</version>
+        </dependency>
+    </dependencies>
 
-        <properties>
-            <maven.compiler.source>21</maven.compiler.source>
-            <maven.compiler.target>21</maven.compiler.target>
-            <junit-jupiter-api>5.9.2</junit-jupiter-api>
-            <logging-interceptor>4.9.1</logging-interceptor>
-            <okhttp>4.9.1</okhttp>
-            <okhttp-urlconnection>4.9.1</okhttp-urlconnection>
-            <okio>2.8.0</okio>
-            <httpcore>4.4.16</httpcore>
-            <converter-jackson>2.9.0</converter-jackson>
-            <retrofit>2.9.0</retrofit>
-            <junit-platform-suite-engine>1.9.2</junit-platform-suite-engine>
-            <junit>4.13.2</junit>
-            <selenium-api>4.17.0</selenium-api>
-            <java-client>8.5.1</java-client>
-            <webdrivermanager>5.5.3</webdrivermanager>
-            <selenium-java>4.17.0</selenium-java>
-            <hamcrest>2.2</hamcrest>
-            <lombok>1.18.30</lombok>
-            <junit-jupiter>5.9.2</junit-jupiter>
-            <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-            <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        </properties>
-    </project>
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <junit-jupiter-api>5.9.2</junit-jupiter-api>
+        <logging-interceptor>4.12.0</logging-interceptor>
+        <okhttp>4.12.0</okhttp>
+        <okhttp-urlconnection>4.10.0-RC1</okhttp-urlconnection>
+        <okio>3.4.0</okio>
+        <httpcore>4.4.16</httpcore>
+        <converter-jackson>2.9.0</converter-jackson>
+        <retrofit>2.9.0</retrofit>
+        <junit-platform-suite-engine>1.9.2</junit-platform-suite-engine>
+        <junit>4.13.2</junit>
+        <selenium-api>4.17.0</selenium-api>
+        <java-client>9.1.0</java-client>
+        <webdrivermanager>5.6.3</webdrivermanager>
+        <selenium-java>4.17.0</selenium-java>
+        <hamcrest>2.2</hamcrest>
+        <lombok>1.18.30</lombok>
+        <junit-jupiter>5.9.2</junit-jupiter>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <validator>1.3.2</validator>
+    </properties>
+</project>

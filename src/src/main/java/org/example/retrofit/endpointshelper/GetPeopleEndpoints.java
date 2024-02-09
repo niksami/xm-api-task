@@ -14,7 +14,6 @@ import static org.apache.http.HttpHeaders.CONTENT_TYPE;
 import static org.apache.http.entity.ContentType.APPLICATION_JSON;
 
 @NoArgsConstructor(access = PRIVATE)
-
 public class GetPeopleEndpoints {
 
     private static final GetPeopleCall GET_PEOPLE_CALLS = new RetrofitBuilder().getRetrofit().create(GetPeopleCall.class);
