@@ -12,15 +12,22 @@ import retrofit2.Response;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.Set;
 
 import static org.apache.http.HttpStatus.SC_OK;
 import static org.example.retrofit.endpointshelper.GetFilmEndpoints.getFilmResponseById;
+import static org.example.retrofit.endpointshelper.GetPeopleEndpoints.getPeopleOnPageResponse;
 import static org.example.retrofit.endpointshelper.GetPeopleEndpoints.getPeopleResponse;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
 public class GetVaderTest {
+    private static double parseBirthYear(String birthYear) {
+        // Remove "BBY" suffix and parse the numeric part
+        return Double.parseDouble(birthYear.replace("BBY", ""));
+    }
+
     @Test
     public void getVaderTest() {
         Response<GetPeopleResponse> getResponse = getPeopleResponse("Vader");
@@ -32,6 +39,34 @@ public class GetVaderTest {
             System.out.println("Film with least planets (" + filmBean.getPlanets().size() + ") is: " + filmBean.getTitle());
             System.out.println(isStarshipInFilm(peopleBean, filmBean));
         }
+    }
+
+    @Test
+    public void getOldestPersonTest() {
+        Response<GetPeopleResponse> getResponse = getPeopleResponse("");
+        assert getResponse.body() != null;
+        int pages = getResponse.body().getCount();
+        pages = (pages / 10) + 1;
+        assertThat("Number of calls to API is under 10!", pages < 10);
+        System.out.println("Number of calls to API: " + pages);
+
+        PeopleBean oldestPerson = null;
+        double oldestYear = 0.0;
+
+        for (int i = 1; i <= pages; i++) {
+            PeopleBean[] peopleFound = Objects.requireNonNull(getPeopleOnPageResponse("" + i).body()).getResults();
+            for (PeopleBean peopleBean : peopleFound) {
+                if (!Objects.equals(peopleBean.getBirthYear(), "unknown")) {
+                    double year = parseBirthYear(peopleBean.getBirthYear());
+                    if (year > oldestYear) {
+                        oldestYear = year;
+                        oldestPerson = peopleBean;
+                    }
+                }
+            }
+
+        }
+        System.out.println("Oldest person is " + oldestPerson.getName() + " with " + oldestYear + " years of age.");
     }
 
     @Test

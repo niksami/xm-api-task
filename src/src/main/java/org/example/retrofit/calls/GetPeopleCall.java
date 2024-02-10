@@ -11,4 +11,7 @@ import java.util.Map;
 public interface GetPeopleCall {
     @GET("people/")
     Call<GetPeopleResponse> getPeople(@Query("search") String name, @HeaderMap Map<String, Object> headers);
+
+    @GET("people/")
+    Call<GetPeopleResponse> getPeopleOnPage(@Query("page") String page, @HeaderMap Map<String, Object> headers);
 }

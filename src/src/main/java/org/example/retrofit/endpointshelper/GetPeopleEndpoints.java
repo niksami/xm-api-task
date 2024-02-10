@@ -26,4 +26,12 @@ public class GetPeopleEndpoints {
         return GET_PEOPLE_CALLS.getPeople(name, headers).execute();
     }
 
+    @SneakyThrows
+    public static Response<GetPeopleResponse> getPeopleOnPageResponse(String page) {
+
+        Map<String, Object> headers = Map.of(CONTENT_TYPE, APPLICATION_JSON);
+
+        return GET_PEOPLE_CALLS.getPeopleOnPage(page, headers).execute();
+    }
+
 }
