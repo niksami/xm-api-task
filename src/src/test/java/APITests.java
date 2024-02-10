@@ -22,7 +22,7 @@ import static org.example.retrofit.endpointshelper.GetPeopleEndpoints.getPeopleR
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
-public class GetVaderTest {
+public class APITests {
     private static double parseBirthYear(String birthYear) {
         // Remove "BBY" suffix and parse the numeric part
         return Double.parseDouble(birthYear.replace("BBY", ""));
@@ -71,7 +71,7 @@ public class GetVaderTest {
 
     @Test
     public void testPeopleSchema() throws IOException {
-        URL schemaUrl = GetVaderTest.class.getResource("/people_response_schema.json");
+        URL schemaUrl = APITests.class.getResource("/people_response_schema.json");
         JsonSchemaFactory schemaFactory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V201909);
         JsonNode schemaNode = new ObjectMapper().readTree(schemaUrl);
         JsonSchema schema = schemaFactory.getSchema(schemaNode);
