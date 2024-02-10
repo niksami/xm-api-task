@@ -5,7 +5,6 @@ import lombok.SneakyThrows;
 import org.example.retrofit.RetrofitBuilder;
 import org.example.retrofit.calls.GetFilmCall;
 import org.example.retrofit.mappings.responses.FilmBean;
-import org.example.retrofit.mappings.responses.GetFilmResponse;
 import retrofit2.Response;
 
 import java.util.Map;
@@ -19,14 +18,6 @@ import static org.apache.http.entity.ContentType.APPLICATION_JSON;
 @NoArgsConstructor(access = PRIVATE)
 public class GetFilmEndpoints {
     private static final GetFilmCall GET_FILM_CALLS = new RetrofitBuilder().getRetrofit().create(GetFilmCall.class);
-
-    @SneakyThrows
-    public static Response<GetFilmResponse> getFilmResponse(String search) {
-
-        Map<String, Object> headers = Map.of(CONTENT_TYPE, APPLICATION_JSON);
-
-        return GET_FILM_CALLS.getFilms(search, headers).execute();
-    }
 
     @SneakyThrows
     public static Response<FilmBean> getFilmResponseById(String url) {

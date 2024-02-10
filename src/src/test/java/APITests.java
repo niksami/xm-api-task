@@ -24,7 +24,6 @@ import static org.hamcrest.Matchers.is;
 
 public class APITests {
     private static double parseBirthYear(String birthYear) {
-        // Remove "BBY" suffix and parse the numeric part
         return Double.parseDouble(birthYear.replace("BBY", ""));
     }
 
